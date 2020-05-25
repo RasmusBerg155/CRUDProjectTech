@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="MyCSS.css">
+</head>
+<body>
+    <h1>Song List:</h1>
+    <a href="/create">
+        <button class="btn-create", id="btn-create">
+            Create new song
+        </button>
+    </a>
+    
+    <table>
+        <thead>
+            <trows>
+                <th>Id </th>
+                <th>Artist </th>
+                <th>Album </th>
+                <th>Song Name </th>
+                <th>Duration </th>
+            </trows>
+        </thead>
+        <tbody>
+        <tr th:each="song: ${song}">
+            <td th:text="${song.id}"></td>
+            <td th:text="${song.artist}"></td>
+            <td th:text="${song.album}"></td>
+            <td th:text="${song.song_name}"></td>
+            <td th:text="${song.duration}"></td>
+            <td>
+                <a th:href="@{'/viewOne/'+${song.id}}">
+                    <button class="btn-viewOne", id="btn-viewOne">
+                        View song
+                    </button>
+                </a>
+                <a th:href="@{'/delete/'+${song.id}}">
+                    <button class="btn-delete", id="btn-delete">
+                        Delete song
+                    </button>
+                </a>
+                <a th:href="@{'/update/'+${song.id}}">
+                    <button class="btn-update", id="btn-update">
+                        Update song
+                    </button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

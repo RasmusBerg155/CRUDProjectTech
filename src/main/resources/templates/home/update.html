@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Update Song</h1>
+
+    <form action="/updateSong" method="post">
+        <input type="text" name="id" th:value="${song.id}">
+        <input type="text" name="artist" th:value="${song.artist}">
+        <input type="text" name="album" th:value="${song.album}">
+        <input type="text" name="song_name" th:value="${song.song_name}">
+        <input type="text" name="duration" th:value="${song.duration}">
+        <input type="submit" value="Save changes">
+    </form>
+</body>
+</html>
